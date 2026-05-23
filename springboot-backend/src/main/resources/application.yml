@@ -1,0 +1,48 @@
+server:
+  # The web server will start on port 3000 by default (overridable via the PORT environment variable)
+  port: ${PORT:3000}
+  
+  # Configure Tomcat to trust downstream reverse proxies (Nginx) so client IP extraction works properly
+  tomcat:
+    remoteip:
+      remote-ip-header: x-forwarded-for
+      protocol-header: x-forwarded-proto
+      proxies-header: x-forwarded-by
+
+spring:
+  application:
+    name: ziplink-backend
+
+  # Spring Data MongoDB Configuration
+  # This uses the MONGO_URI env var, which connects perfectly to MongoDB Atlas!
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+
+    # Spring Data Redis Configuration
+    # Uses the REDIS_URL environment variable (e.g. for Upstash or Docker Redis container)
+    redis:
+      url: ${REDIS_URL:redis://localhost:6379}
+
+  # Jackson settings to format JSON responses beautifully
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+# Custom application properties specific to ZipLink URL Shortener
+ziplink:
+  # The Base URL to prepend to generated shortCodes (e.g., http://localhost)
+  base-url: ${BASE_URL:http://localhost}
+  
+  # The Snowflake Worker ID (0-1023) to keep short codes unique across different server instances
+  worker-id: ${WORKER_ID:0}
+
+# Configure Logging levels to see details in development and stay clean in production
+logging:
+  level:
+    root: INFO
+    com.ziplink: DEBUG
+    org.springframework.data.mongodb: INFO
+    org.springframework.data.redis: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

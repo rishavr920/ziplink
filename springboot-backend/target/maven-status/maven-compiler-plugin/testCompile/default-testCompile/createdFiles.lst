@@ -1,0 +1,4 @@
+com/ziplink/utils/Base62Test.class
+com/ziplink/controller/UrlControllerTest.class
+com/ziplink/utils/SnowflakeTest.class
+com/ziplink/service/UrlServiceTest.class
