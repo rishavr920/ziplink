@@ -1,10 +1,8 @@
 package com.ziplink.dto;
 
-/**
- * VerifyPasswordResponse.
- * 
- * Outgoing payload returned upon successful password verification: POST /api/verify-password/{code}
- */
+//VerifyPasswordResponse.
+//Outgoing payload returned upon successful password verification: POST /api/verify-password/{code}
+
 public class VerifyPasswordResponse {
 
     private boolean success;

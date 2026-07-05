@@ -2,11 +2,10 @@ package com.ziplink.dto;
 
 import java.time.Instant;
 
-/**
- * ShortenResponse.
- * 
- * Outgoing payload returned upon successful URL creation: POST /api/shorten
- */
+
+// ShortenResponse.
+// Outgoing payload returned upon successful URL creation: POST /api/shorten
+
 public class ShortenResponse {
 
     private String originalUrl;

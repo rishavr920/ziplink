@@ -6,11 +6,10 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-/**
- * ShortenRequest.
- * 
- * Incoming payload schema for URL creation: POST /api/shorten
- */
+
+//ShortenRequest.
+//Incoming payload schema for URL creation: POST /api/shorten
+
 public class ShortenRequest {
 
     @NotBlank(message = "URL is required")

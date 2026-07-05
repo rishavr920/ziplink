@@ -2,11 +2,9 @@ package com.ziplink.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-/**
- * VerifyPasswordRequest.
- * 
- * Incoming payload schema for password verification: POST /api/verify-password/{code}
- */
+//VerifyPasswordRequest.
+// Incoming payload schema for password verification: POST /api/verify-password/{code}
+
 public class VerifyPasswordRequest {
 
     @NotBlank(message = "Password is required")

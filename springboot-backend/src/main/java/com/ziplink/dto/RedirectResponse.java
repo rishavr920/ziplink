@@ -2,11 +2,9 @@ package com.ziplink.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-/**
- * RedirectResponse.
- * 
- * Outgoing payload returned upon requesting redirect info: GET /api/redirect/{code}
- */
+//RedirectResponse.
+//Outgoing payload returned upon requesting redirect info: GET /api/redirect/{code}
+
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RedirectResponse {
 
@@ -44,10 +42,25 @@ public class RedirectResponse {
         private Boolean requiresPassword;
         private String shortCode;
 
-        public RedirectResponseBuilder redirect(Boolean redirect) { this.redirect = redirect; return this; }
-        public RedirectResponseBuilder url(String url) { this.url = url; return this; }
-        public RedirectResponseBuilder requiresPassword(Boolean requiresPassword) { this.requiresPassword = requiresPassword; return this; }
-        public RedirectResponseBuilder shortCode(String shortCode) { this.shortCode = shortCode; return this; }
+        public RedirectResponseBuilder redirect(Boolean redirect) {
+            this.redirect = redirect;
+            return this;
+        }
+
+        public RedirectResponseBuilder url(String url) {
+            this.url = url;
+            return this;
+        }
+
+        public RedirectResponseBuilder requiresPassword(Boolean requiresPassword) {
+            this.requiresPassword = requiresPassword;
+            return this;
+        }
+
+        public RedirectResponseBuilder shortCode(String shortCode) {
+            this.shortCode = shortCode;
+            return this;
+        }
 
         public RedirectResponse build() {
             return new RedirectResponse(redirect, url, requiresPassword, shortCode);
